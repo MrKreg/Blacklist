@@ -50,6 +50,11 @@ class BaseReviewSerializer(serializers.Serializer):
 class ApproveBlockSerializer(BaseReviewSerializer):
     new_status = Status.APPROVED.value
 
+    def update(self, instance, validated_data):
+        instance = super(ApproveBlockSerializer, self).update(instance, validated_data)
+        BlockedDomain.objects.update_or_create({'domain': instance.domain})
+        return instance
+
 
 class RefuseBlockSerializer(BaseReviewSerializer):
     new_status = Status.REFUSED.value
