@@ -44,7 +44,6 @@ class BaseReviewSerializer(serializers.Serializer):
     def update(self, instance, validated_data):
         instance.status = self.new_status
         instance.save()
-        print(instance.status)
         return instance
 
 

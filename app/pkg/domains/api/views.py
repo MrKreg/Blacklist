@@ -28,7 +28,6 @@ class RequestReviewViewSet(ActionMixin, GenericViewSet):
 
     @action(detail=True, methods=['post'], serializer_class=serializers.ApproveBlockSerializer)
     def approve(self, request, *args, **kwargs):
-        print('approve')
         return self.run_action()
 
     @action(detail=True, methods=['post'], serializer_class=serializers.RefuseBlockSerializer)
