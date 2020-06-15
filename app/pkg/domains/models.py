@@ -26,3 +26,11 @@ class BlockRequest(TimeStampedModel):
     class Meta:
         verbose_name = _('block request')
         verbose_name_plural = _('blocked domains')
+
+    @property
+    def is_approved(self):
+        return self.status == Status.APPROVED.value
+
+    @property
+    def is_refused(self):
+        return self.status == Status.REFUSED.value
