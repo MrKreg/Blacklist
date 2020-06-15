@@ -35,6 +35,7 @@ schema_view = get_schema_view(
 
 api_patterns = [
     path('', include('app.pkg.account.api.urls')),
+    path('', include('app.pkg.domains.api.urls')),
 ]
 
 urlpatterns = [

@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = [
 
 PROJECT_APPS = [
     'app.pkg.account',
+    'app.pkg.domains',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
@@ -175,7 +176,6 @@ REST_FRAMEWORK = {
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
     ),
-    'EXCEPTION_HANDLER': 'app.pkg.common.handlers.api_exception_handler'
 }
 
 # Cross-origin settings
